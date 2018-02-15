@@ -422,6 +422,19 @@
 		 TOOLTIPS
 		========================================================== */
 		$('[data-toggle="tooltip"]').tooltip();
+
+		//Instagram feed//
+		var feed = new Instafeed({
+		    get: 'user',
+		    userId: '1811309061',
+		    target: "instafeed",
+		    limit: 9,
+		    clientId: 'ce1a75e3cd3248b59a70f9fba830a37a',
+		    accessToken: '1811309061.ce1a75e.efe186c99e8d43e3b869ee206b1bbe42',
+		    resolution: 'low_resolution',
+		    template: '<div class="col-sm-4 item-feed"><a href="{{link}}" target="_blank"><img alt="{{caption}}" title="{{caption}}" class="img-responsive" src="{{image}}" /></a></div>'
+		});
+		feed.run();
 		
 				
 /*--------------------------------------------------------------------------------------------------------------------------------------*/		
