@@ -435,6 +435,40 @@
 		    template: '<div class="col-sm-4 item-feed"><a href="{{link}}" target="_blank"><img alt="{{caption}}" title="{{caption}}" class="img-responsive" src="{{image}}" /></a></div>'
 		});
 		feed.run();
+
+
+		// * navegacion por scroll *//
+		
+		/*Anclas*/
+
+    var go = function (val){
+      
+      var pos = jQuery(val).attr('href');
+
+      jQuery('html, body').animate({
+        scrollTop: jQuery(pos).offset().top
+      }, 1000);
+
+    };
+
+		//Anclas animadas
+  	var locacion = window.location.hash
+
+  	if (locacion != ''){
+
+  	  jQuery('html, body').animate({
+  	    scrollTop: jQuery(locacion).offset().top
+  	  }, 1000);
+
+  	};
+
+		jQuery('#header .navigation-menu a, #header .nav a').click(function() {
+		  // e.preventDefault();
+		  go(this);
+		  jQuery('#header .navigation-menu li').removeClass('active');
+		  jQuery(this).parent().addClass('active');
+
+		});
 		
 				
 /*--------------------------------------------------------------------------------------------------------------------------------------*/		
